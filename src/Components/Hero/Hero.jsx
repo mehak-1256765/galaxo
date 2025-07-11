@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-// import heroImg from "@/assets/hero2.webp?w=600;1200&format=webp&as=src";
+import heroImg from "@/assets/hero2.webp?w=800;1200&format=webp&as=src"; // ✅ compressed image import
 
 const Model3D = lazy(() => import("../model3D"));
 
@@ -77,16 +77,15 @@ const Hero = () => {
             transition={{ duration: 1.2, delay: 0.2 }}
           >
             <img
-              src="assets/hero2.webp"
+              src={heroImg}
               alt="Galaxy"
               loading="lazy"
               width="600"
               height="400"
               className="object-cover w-full h-auto mt-6 rounded-lg shadow-lg"
             />
-         
           </motion.div>
-             <Model3D />
+          <Model3D />
         </Suspense>
       </div>
     </div>

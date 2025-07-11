@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .primary-btn {
+    @apply px-6 py-2 text-white duration-300 rounded-full bg-gradient-to-r from-primary to-secondary hover:scale-105;
+  }
+}
+
+.animated-wrapper {
+  animation-name: move-wrapper;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  position: absolute;
+}
+
+@keyframes move-wrapper {
+  0% {
+    transform: translate(150%, 30%) rotate(0) scale(0.8);
+  }
+  50% {
+    transform: translate(60vw, 0vh) rotate(150deg) scale(1.2);
+  }
+  to {
+    transform: translate(40vw, 40vh) rotate(0deg) scale(0.8);
+  }
+}
+
